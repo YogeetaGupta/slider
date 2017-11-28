@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            img#imgslider{
+                position: relative;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0s;
+                margin-top: -150px;
+            }
+            h1{
+                color: white;
+                font-weight: bold;
+                position: relative;
+                top: 200px;
+                left: 200px;
+                height: 100px;
+                width: 300px;
+                opacity: 0.5;
+                background-color: black;
+                text-align: center;
+                line-height: 100px;
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> IMAGE SLIDER </h1>
+        <img src="" id="imgslider" height="650px" width="100%">
+        <script>
+            var count=0;
+            var imgarr=["./image/night.jpg","./image/cloud.jpg","./image/rain.gif","./image/clo.jpg","./image/water.jpg"];
+            var slide=document.getElementById('imgslider');
+           
+function Showimg()
+{
+   count++;
+   slide.style.opacity = 0;
+   if(count > (imgarr.length -1))
+   {
+      count = 0;
+   }
+   setTimeout('Gotimg()',1500);
+}
+  function Gotimg()
+  {
+     slide.src = imgarr[count];
+     slide.style.opacity = 1;
+   setTimeout('Showimg()',1000);
+  }
+Gotimg();
+</script>
+    </body>
+</html>
